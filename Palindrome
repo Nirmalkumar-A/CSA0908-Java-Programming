@@ -1,0 +1,29 @@
+public class R192210490 {
+    public static boolean isPalindrome(int x) {
+        
+        if (x < 0 || (x % 10 == 0 && x != 0)) {
+            return false;
+        }
+
+        int original = x;
+        int reversed = 0;
+
+        while (x > 0) {
+            int digit = x % 10; 
+            reversed = reversed * 10 + digit; 
+            x /= 10; 
+        }
+
+        return original == reversed;
+    }
+
+    public static void main(String[] args) {
+        int number1 = 121;
+        int number2 = -121;
+        int number3 = 10;
+
+        System.out.println(number1 + " is palindrome: " + isPalindrome(number1)); 
+        System.out.println(number2 + " is palindrome: " + isPalindrome(number2)); 
+        System.out.println(number3 + " is palindrome: " + isPalindrome(number3)); 
+    }
+}
