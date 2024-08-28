@@ -1,0 +1,24 @@
+public class R192210490 {
+
+    public String convertToTitle(int columnNumber) {
+        StringBuilder result = new StringBuilder();
+        
+        while (columnNumber > 0) {
+            columnNumber--;
+            int remainder = columnNumber % 26;
+            char letter = (char) (remainder + 'A');
+            result.insert(0, letter);
+            columnNumber /= 26;
+        }
+        
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        R192210490 solution = new R192210490();
+        
+        int columnNumber1 = 1;
+        System.out.println("Column Number " + columnNumber1 + " -> Title: " + solution.convertToTitle(columnNumber1)); 
+
+    }
+}
