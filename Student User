@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class UserCountCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Total Users: ");
+        int totalUsers = input.nextInt();
+
+        System.out.print("Staff Users: ");
+        int staffUsers = input.nextInt();
+        int nonTeachingStaffUsers = staffUsers / 3;
+        int totalStaffUsers = staffUsers + nonTeachingStaffUsers;
+        int studentUsers = totalUsers - totalStaffUsers;
+
+        System.out.println("Student Users: " + studentUsers);
+    }
+}
